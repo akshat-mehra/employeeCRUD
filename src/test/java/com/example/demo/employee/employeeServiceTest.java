@@ -11,8 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class employeeServiceTest {
@@ -71,6 +70,9 @@ class employeeServiceTest {
 
         // Set up mock employeeRepository behavior
         when(employeeRepository.existsById(Employee.getId())).thenReturn(Boolean.TRUE);
+//        when(employeeRepository.deleteById(Employee.getId())).thenReturn(Boolean.TRUE);
+
+
 
         // Call the employeeService method being tested
         employeeService.deleteEmployee(Employee.getId());
